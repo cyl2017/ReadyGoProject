@@ -7,7 +7,7 @@
 //
 
 #import "ForgetPassWord.h"
-
+#import "HttpClient+AboutLogin.h"
 @interface ForgetPassWord ()
 @property (strong, nonatomic) IBOutlet UITextField *telphone;
 @property (strong, nonatomic) IBOutlet UITextField *vcode;
@@ -38,6 +38,12 @@
         [BMToast makeText:@"请输入正确的手机号码"];
         return;
     }
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"cellphone"] = _telphone.text;
+    params[@"type"] = @"1";
+    [[HttpClient sharedInstance]getVerifyCodeWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        
+    }];
     [self countdown:sender];
     
     
@@ -62,8 +68,14 @@
         [BMToast makeText:@"两次输入密码不一致"];
         return;
     }
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"cellphone"] = _telphone.text;
+    params[@"password"] = _passWord.text;
+    params[@"verifyCode"] = _vcode.text;
+    [[HttpClient sharedInstance]memberForgetPasswordWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+   
     
 }
 

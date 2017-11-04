@@ -10,6 +10,7 @@
 #import "LoginVC.h"
 #import "ToolClass.h"
 #import "CategoryVC.h"
+#import "HttpClient+AboutLogin.h"
 @interface LoginVC ()
 @property (strong, nonatomic) IBOutlet UITextField *accountNum;//账号
 @property (strong, nonatomic) IBOutlet UITextField *passWord;//m密码
@@ -44,8 +45,8 @@
                     
                     return;
                 }
-             
-                [self loginBackState];
+               
+                [self  login];
             }
             break;
         case 1:
@@ -120,7 +121,16 @@
 }
 
          
+-(void)login{
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"cellphone"] = _accountNum.text;
+    params[@"password"] =  _passWord.text;
+    [[HttpClient sharedInstance]memberLoginWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        
+    }];
 
+}
 
 
 

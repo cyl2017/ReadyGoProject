@@ -71,7 +71,11 @@
     }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@""] = _passWord.text;
+    params[@"cellphone"] = _telphone.text;
+    params[@"password"] = _passWord.text;
+    params[@"verifyCode"] = _vCode.text;
+    params[@"inviteCode"] = _recomenPhone.text;
+    
     [[HttpClient sharedInstance]memberRegisterWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
         
          [self.navigationController popViewControllerAnimated:YES];

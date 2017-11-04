@@ -52,4 +52,20 @@
     }];
     
 }
+
+
+//忘记密码  POST /member/forgetPassword
+- (void)memberForgetPasswordWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle{
+    BMRequest *request = [BMRequest requestWithPath:@"member/forgetPassword"];
+    request.requestParams = param;
+    [request addIgonreHookClass:[LoadingHook class]];
+    [self startRequest:request finish:^(BMResponse *response) {
+        completeHandle(response.rawResult,nil);
+    } failureHandler:^(NSError *error) {
+        [BMToast makeText:error.localizedDescription];
+        completeHandle(nil, error);
+    }];
+    
+    
+}
 @end

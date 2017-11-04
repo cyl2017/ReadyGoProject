@@ -15,4 +15,7 @@
 - (void)memberRegisterWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle;
 //登录
 - (void)memberLoginWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle;
+
+//忘记密码  POST /member/forgetPassword
+- (void)memberForgetPasswordWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle;
 @end
