@@ -10,6 +10,8 @@
 #import "MerChantVC.h"
 #import "SKTagView.h"
 #import "SKTagButton.h"
+#import "LoginVC.h"
+#import "LKBaseNavController.h"
 @interface ProductDetailVC ()<UIWebViewDelegate>{
     UIButton *_selectedButton;
     NSMutableArray *mUrlArray;
@@ -164,6 +166,28 @@
 - (IBAction)collectionArraryForClickOnBottom:(UIButton *)sender {
     
     // 客服4 收藏5 加入购物车6 立即购买7
+    switch (sender.tag) {
+        case 4:
+            
+            break;
+        case 5:
+            
+            break;
+        case 6:
+            
+            break;
+        case 7:{
+            LoginVC *logVC = [LoginVC new];
+            LKBaseNavController *loginViewController = [[LKBaseNavController alloc] initWithRootViewController:logVC];
+            [((LKTabBarController *)kWindow.rootViewController.presentedViewController) presentViewController:loginViewController animated:YES completion:nil];
+            return;
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
     
 }
 

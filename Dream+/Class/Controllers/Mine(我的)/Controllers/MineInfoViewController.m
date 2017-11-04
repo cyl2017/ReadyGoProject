@@ -8,6 +8,7 @@
 
 #import "MineInfoViewController.h"
 #import "AddressViewController.h"
+#import "LoginVC.h"
 @interface MineInfoViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
     UIImagePickerController *imagePicker;
@@ -49,7 +50,19 @@
 }
 - (IBAction)loginOut:(UIButton *)sender {
     //退出登录
-    //    此处做消除账户信息操作
+    //此处做消除账户信息操作
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    [user setBool:NO forKey:@"login"];
+    [user synchronize];
+    LKTabBarController *tabbar = (LKTabBarController *)self.view.window.rootViewController.presentedViewController;
+    [tabbar setSelectedIndex:0];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    LKBaseNavController *loginNav=[[LKBaseNavController alloc]initWithRootViewController:[[LoginVC alloc]init]];
+    [tabbar presentViewController:loginNav animated:YES completion:nil];
+    
+    
 }
 - (IBAction)changeHeaderIcon:(UITapGestureRecognizer *)sender {
     //跟换图片

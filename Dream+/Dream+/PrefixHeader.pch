@@ -78,6 +78,7 @@ return __singleton__; \
 #import "SDCycleScrollView.h"
 #import "RequestPage.h"
 #import "LKBaseNavController.h"
+#import "LKTabBarController.h"
 #define kLocationNotification  @"kLocationNotification"//定位通知
 //
 #define kBackGroundColor BMColor(240, 240, 240)

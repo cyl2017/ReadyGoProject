@@ -56,8 +56,16 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    
-    if (![[(UINavigationController *)viewController visibleViewController] isKindOfClass:[HomeVC class]]&&![[(UINavigationController *)viewController visibleViewController] isKindOfClass:[CategoryVC class]]&&![[(UINavigationController *)viewController visibleViewController] isKindOfClass:[ShopingCarVC class]]&&![user boolForKey:@"login"]) {
+    if ([[(UINavigationController *)viewController visibleViewController] isKindOfClass:[HomeVC class]]){
+        self.Itemsindex = 0;
+    }else if ([[(UINavigationController *)viewController visibleViewController] isKindOfClass:[CategoryVC class]]) {
+        self.Itemsindex = 1;
+    }else if ([[(UINavigationController *)viewController visibleViewController] isKindOfClass:[ShopingCarVC class]]) {
+        self.Itemsindex = 2;
+    }else if ([[(UINavigationController *)viewController visibleViewController] isKindOfClass:[MineVC class]]){
+        self.Itemsindex = 3;
+    }
+    if (![[(UINavigationController *)viewController visibleViewController] isKindOfClass:[HomeVC class]]&&![[(UINavigationController *)viewController visibleViewController] isKindOfClass:[CategoryVC class]]&&![user boolForKey:@"login"]) {
         LKBaseNavController *nav=[[LKBaseNavController alloc]initWithRootViewController:[LoginVC new]];
         [self presentViewController:nav animated:YES completion:^{
             
@@ -89,8 +97,10 @@
 
 }
 
-- (LKBaseNavController *)presentLoginViewController{
-
-    return nil;
+- (LKBaseNavController *)presentLoginViewController
+{
+    LKBaseNavController *loginViewController = [[LKBaseNavController alloc] initWithRootViewController:[LoginVC new]];
+    [self presentViewController:loginViewController animated:YES completion:nil];
+    return loginViewController;
 }
 @end

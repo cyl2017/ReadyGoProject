@@ -9,6 +9,7 @@
 #import "ForgetPassWord.h"
 #import "LoginVC.h"
 #import "ToolClass.h"
+#import "CategoryVC.h"
 @interface LoginVC ()
 @property (strong, nonatomic) IBOutlet UITextField *accountNum;//账号
 @property (strong, nonatomic) IBOutlet UITextField *passWord;//m密码
@@ -49,16 +50,17 @@
             break;
         case 1:
         {
-            RegistVC *regist  = [RegistVC new];
-            [self.navigationController pushViewController:regist animated:YES];
-
+                RegistVC *regist  = [RegistVC new];
+         
+                [self.navigationController pushViewController:regist animated:YES];
+            
 
         }
             break;
         case 2:
         {
             ForgetPassWord *Forget  = [ForgetPassWord new];
-
+  
             [self.navigationController pushViewController:Forget animated:YES];
 
         }
@@ -85,10 +87,14 @@
 }
 
 - (IBAction)backToViewController:(UIButton *)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+     [self dismissViewControllerAnimated:YES completion:nil];
     UITabBarController * tabbar = (UITabBarController *)self.navigationController.presentingViewController;
-    [tabbar setSelectedIndex:0];
+    if (tabbar.selectedIndex==1) {
+        [tabbar setSelectedIndex:1];
+    }else{
+        [tabbar setSelectedIndex:0];
+       
+    }
 }
 
 
@@ -101,14 +107,16 @@
    
     [self dismissViewControllerAnimated:YES completion:^{
     }];
-    UITabBarController * tabbar = (UITabBarController *)self.navigationController.presentingViewController;
-    [tabbar setSelectedIndex:3];
-    NSArray *array = tabbar.viewControllers;
-    UINavigationController *nav = array[3];
-    [nav popToRootViewControllerAnimated:NO];
-    
-    
-    
+    LKTabBarController * tabbar = (LKTabBarController *)self.navigationController.presentingViewController;
+    if (tabbar.Itemsindex==2) {
+        [tabbar setSelectedIndex:2];
+    }else if (tabbar.Itemsindex==3){
+        [tabbar setSelectedIndex:3];
+        NSArray *array = tabbar.viewControllers;
+        UINavigationController *nav = array[3];
+        [nav popToRootViewControllerAnimated:NO];
+    }
+
 }
 
          

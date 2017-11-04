@@ -10,7 +10,7 @@
 #import "LKBaseNavController.h"
 
 @interface LKTabBarController : UITabBarController
-
-//- (LKBaseNavController *)presentLoginViewController;
+@property (nonatomic,assign) NSInteger Itemsindex;
+- (LKBaseNavController *)presentLoginViewController;
 
 @end
