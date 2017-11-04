@@ -9,7 +9,7 @@
 #import "HttpClient+AboutLogin.h"
 #import "LoadingHook.h"
 @implementation HttpClient (AboutLogin)
-//获取验证码
+//获取验证码;
 - (void)getVerifyCodeWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle{
     BMRequest *request = [BMRequest requestWithPath:@"verifyCode/getVerifyCode"];
     request.requestParams = param;
