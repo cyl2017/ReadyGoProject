@@ -1,0 +1,31 @@
+{
+  "name": "BM4Group",
+  "version": "1.1",
+  "summary": "BM4Group Develpoe iOS Library.",
+  "homepage": "https://github.com/chrain/BM4Group",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "authors": {
+    "Chrain": "chrain.master@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/chrain/BM4Group.git",
+    "tag": "1.1"
+  },
+  "requires_arc": true,
+  "source_files": "BM4Group/**/*.{h,m}",
+  "public_header_files": "BM4Group/**/*.{h}",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "MJExtension": [
+
+    ]
+  }
+}

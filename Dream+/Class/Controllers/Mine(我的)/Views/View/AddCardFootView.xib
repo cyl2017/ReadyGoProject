@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddCardFootView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWN-Vz-ABa">
+                    <rect key="frame" x="0.0" y="10" width="375" height="100"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gdo-aC-tkb">
+                            <rect key="frame" x="20" y="25" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="E7n-E2-yWW"/>
+                                <constraint firstAttribute="height" constant="50" id="dbh-Qd-Kcz"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGJ-F6-ePP">
+                            <rect key="frame" x="100" y="39.5" width="255" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="0SO-TV-o8E"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="vGJ-F6-ePP" firstAttribute="centerY" secondItem="cWN-Vz-ABa" secondAttribute="centerY" id="6f4-L6-h8M"/>
+                        <constraint firstItem="vGJ-F6-ePP" firstAttribute="leading" secondItem="Gdo-aC-tkb" secondAttribute="trailing" constant="30" id="GxC-Sh-XRR"/>
+                        <constraint firstItem="Gdo-aC-tkb" firstAttribute="leading" secondItem="cWN-Vz-ABa" secondAttribute="leading" constant="20" id="QUD-yu-v2j"/>
+                        <constraint firstAttribute="trailing" secondItem="vGJ-F6-ePP" secondAttribute="trailing" constant="20" id="cK4-Js-Xqm"/>
+                        <constraint firstItem="Gdo-aC-tkb" firstAttribute="centerY" secondItem="cWN-Vz-ABa" secondAttribute="centerY" id="ulB-Xl-1P1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cWN-Vz-ABa" secondAttribute="trailing" id="7Oi-lR-jVm"/>
+                <constraint firstItem="cWN-Vz-ABa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="EwY-1O-cXG"/>
+                <constraint firstAttribute="bottom" secondItem="cWN-Vz-ABa" secondAttribute="bottom" constant="10" id="FNp-gC-98K"/>
+                <constraint firstItem="cWN-Vz-ABa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OLk-A9-Mqx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="68" y="141"/>
+        </view>
+    </objects>
+</document>

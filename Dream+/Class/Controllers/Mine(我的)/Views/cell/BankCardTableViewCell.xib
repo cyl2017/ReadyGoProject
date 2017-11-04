@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="BankCardTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="109"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="328" height="108.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZX-z1-tmk">
+                        <rect key="frame" x="8" y="29.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="669-vL-grQ"/>
+                            <constraint firstAttribute="height" constant="50" id="9cv-w3-x60"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国建设银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbv-ud-Y0H">
+                        <rect key="frame" x="78" y="29.5" width="162" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6222222222222222" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUU-fk-iXW">
+                        <rect key="frame" x="78" y="61.5" width="232" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl2-ne-1Zl">
+                        <rect key="frame" x="250" y="28" width="50" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="dOO-y4-3pY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="删除" backgroundImage="圆角矩形4">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Dl2-ne-1Zl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="AbW-Wf-Tgo"/>
+                    <constraint firstItem="WZX-z1-tmk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bsw-i0-Hdb"/>
+                    <constraint firstItem="WZX-z1-tmk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Pc7-m8-MLV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Dl2-ne-1Zl" secondAttribute="trailing" constant="20" id="ZAg-rV-ugV"/>
+                    <constraint firstItem="gbv-ud-Y0H" firstAttribute="top" secondItem="WZX-z1-tmk" secondAttribute="top" id="ZNB-tG-deG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eUU-fk-iXW" secondAttribute="trailing" constant="10" id="atz-s0-4KN"/>
+                    <constraint firstItem="eUU-fk-iXW" firstAttribute="leading" secondItem="gbv-ud-Y0H" secondAttribute="leading" id="gWX-da-ISb"/>
+                    <constraint firstItem="eUU-fk-iXW" firstAttribute="bottom" secondItem="WZX-z1-tmk" secondAttribute="bottom" id="hzB-3b-6c8"/>
+                    <constraint firstItem="Dl2-ne-1Zl" firstAttribute="leading" secondItem="gbv-ud-Y0H" secondAttribute="trailing" constant="10" id="mCd-e3-bNT"/>
+                    <constraint firstItem="gbv-ud-Y0H" firstAttribute="leading" secondItem="WZX-z1-tmk" secondAttribute="trailing" constant="20" id="tub-eP-tKM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bankTitle" destination="gbv-ud-Y0H" id="BeV-CL-sC7"/>
+                <outlet property="cardText" destination="eUU-fk-iXW" id="9ww-c6-ke1"/>
+                <outlet property="deleteBtn" destination="Dl2-ne-1Zl" id="rOe-oS-WMh"/>
+                <outlet property="photo" destination="WZX-z1-tmk" id="Mlu-Zt-8nn"/>
+            </connections>
+            <point key="canvasLocation" x="-7" y="165.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="圆角矩形4" width="70" height="24"/>
+    </resources>
+</document>

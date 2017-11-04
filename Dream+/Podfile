@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Dream+' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Dream+
+pod 'AFNetworking', '~> 3.0.4'
+pod 'SDWebImage', '~> 3.7.5'
+pod 'MJRefresh', '~> 3.1.0'
+pod 'MJExtension', '~> 3.0.10'
+pod 'IQKeyboardManager', '~> 4.0.0'
+pod 'Masonry', '~> 0.6.4'
+pod 'SVProgressHUD', '~> 2.0'
+pod 'BM4Group', :git => 'https://github.com/chrain/BM4Group.git'
+pod 'YYKit'
+pod 'DZNEmptyDataSet'
+pod 'UITableView+FDTemplateLayoutCell'
+pod 'SDCycleScrollView'
+pod 'FDStackView'
+pod 'ReactiveCocoa', '~> 2.5'
+end

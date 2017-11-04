@@ -1,0 +1,110 @@
+//
+//  PrefixHeader.pch
+//  WenDao
+//
+//  Created by liuke on 2017/3/16.
+//  Copyright © 2017年 Apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+//视图frame
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width  [UIScreen mainScreen].bounds.size.width
+//
+#define kWindow  [UIApplication sharedApplication].keyWindow
+
+#define weakSelf(self)  __weak typeof(self)weakSelf = self
+
+//按照比例适配
+#define RatioW(__w__) (CGFloat)(g_ratioF * (CGFloat)(__w__))
+#define RatioH(__h__) (CGFloat)(g_ratioF * (CGFloat)(__h__))
+//
+//字体大小按照比例适配
+#define FONT(a)  [UIFont systemFontOfSize:(g_ratioF * a)]
+#define BFONT(a) [UIFont boldSystemFontOfSize:(g_ratioF * a)]
+
+//设备判断
+#define kDevice_Is_iPhone4  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kDevice_Is_iPhone5  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kDevice_Is_iPhone6  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+//
+#define kScaleWidth(iphone6Width) [[UIScreen mainScreen] bounds].size.width / 375.f * iphone6Width
+
+#define kScaleHeight(iphone6Height) [[UIScreen mainScreen] bounds].size.height / 667.f * iphone6Height
+#define BMColor(r,g,b)     [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
+#define UIColorFromRGB(hexValue) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
+#define kDefaultFont [UIFont systemFontOfSize:16.0]
+#define Kfont(str) [UIFont systemFontOfSize:str]
+#define kPreviewFeatureVersion @"kPreviewFeatureVersion"//版本号
+#define kWindow            [UIApplication sharedApplication].keyWindow
+//单例模式
+#undef	AS_SINGLETON
+#define AS_SINGLETON( __class ) \
++ (__class *)sharedInstance;
+
+#undef	DEF_SINGLETON
+#define DEF_SINGLETON( __class ) \
++ (__class *)sharedInstance \
+{ \
+static dispatch_once_t once; \
+static __class * __singleton__; \
+dispatch_once( &once, ^{ __singleton__ = [[__class alloc] init]; } ); \
+return __singleton__; \
+}
+#define XS_INITCLASS( __class ) [[__class alloc] init];
+
+#import <AFNetworking.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "Masonry.h"
+#import "KOGlobalConfig.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <BM4Group/BM4Group.h>
+#import <ReactiveCocoa.h>
+#import <YYKit.h>
+#import "LKMainTool.h"
+#import "ToolClass.h"
+#import "UserModel.h"
+#import "YYTableData.h"
+#import "LocationManager.h"
+#import "SDCycleScrollView.h"
+#import "RequestPage.h"
+#import "LKBaseNavController.h"
+#define kLocationNotification  @"kLocationNotification"//定位通知
+//
+#define kBackGroundColor BMColor(240, 240, 240)
+#define initStoryBord [UIStoryboard storyboardWithName:@"Main" bundle:nil] 
+//本地
+#define kRootImageUrl @"http://120.76.165.119:8090/static"
+#define kRootServeUrl @"http://106.14.187.125:8080/dreamerPlus-app/"
+
+
+///判断字符串是否为空
+static inline BOOL isStringEmpty(NSString *value) {
+    BOOL result = FALSE;
+    if (!value || [value isKindOfClass:[NSNull class]])
+    {
+        // null object
+        result = TRUE;
+    } else {
+        NSString *trimedString = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([value isKindOfClass:[NSString class]] && [trimedString length] == 0) {
+            // empty string
+            result = TRUE;
+        }
+    }
+    return result;
+}
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

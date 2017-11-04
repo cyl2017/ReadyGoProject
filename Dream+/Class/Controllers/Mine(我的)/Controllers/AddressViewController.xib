@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressViewController">
+            <connections>
+                <outlet property="tableView" destination="L6J-Xt-a4Z" id="zVr-vO-3h1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="RMN-VQ-73U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6J-Xt-a4Z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ikT-sa-I4M"/>
+                        <outlet property="delegate" destination="-1" id="f3D-dJ-Fmv"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-aG-tuy">
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="JUz-C1-wOF"/>
+                    </constraints>
+                    <state key="normal" title=" 新增地址">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addNewaddress:" destination="-1" eventType="touchUpInside" id="GqK-ST-ewv"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="L6J-Xt-a4Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3X9-7d-Awo"/>
+                <constraint firstAttribute="bottom" secondItem="cPN-aG-tuy" secondAttribute="bottom" id="6KO-oa-SuW"/>
+                <constraint firstAttribute="trailing" secondItem="cPN-aG-tuy" secondAttribute="trailing" id="HhV-4y-b01"/>
+                <constraint firstItem="cPN-aG-tuy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dWO-Jx-BTT"/>
+                <constraint firstItem="cPN-aG-tuy" firstAttribute="top" secondItem="L6J-Xt-a4Z" secondAttribute="bottom" id="tef-t1-cym"/>
+                <constraint firstAttribute="trailing" secondItem="L6J-Xt-a4Z" secondAttribute="trailing" id="u1E-VW-tvx"/>
+                <constraint firstItem="L6J-Xt-a4Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z8l-Cw-FLv"/>
+            </constraints>
+            <point key="canvasLocation" x="208" y="94"/>
+        </view>
+    </objects>
+</document>
