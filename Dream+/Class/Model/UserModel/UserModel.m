@@ -7,23 +7,25 @@
 
 #import "UserModel.h"
 
-
-NSString *const kUserModelId = @"id";
-NSString *const kUserModelPhone = @"phone";
-NSString *const kUserModelCorporateName = @"corporateName";
-NSString *const kUserModelCreateDate = @"createDate";
-NSString *const kUserModelInviteCode = @"inviteCode";
-NSString *const kUserModelLicenseKey = @"licenseKey";
-NSString *const kUserModelExamine = @"examine";
-NSString *const kUserModelPassword = @"password";
-NSString *const kUserModelIcon = @"icon";
+NSString *const kUserModelId = @"memberId";
+NSString *const kUserModelPhone = @"cellphone";
 NSString *const kUserModelNickName = @"nickName";
-NSString *const kUserModelPlantId = @"plantId";
-NSString *const kUserModelShopIntro = @"shopIntro";
-NSString *const kUserModelShopName = @"shopName";
-NSString *const kUserModelStatus = @"status";
-NSString *const kUserModelLoginStatus = @"loginStatus";
-NSString *const kUserModelBusinessLicenseImg = @"businessLicenseImg";
+NSString *const kUserModelCreateDate = @"registerDate";
+NSString *const kUserModelInviteCode = @"inviteCode";
+
+NSString *const kUserModelParentInviteCode = @"parentInviteCode";
+NSString *const kUserModelSex= @"sex";
+NSString *const kUserModelHeader = @"headImg";
+NSString *const kUserModelPassword = @"password";
+NSString *const kUserModelwaitMemberRebatePoints = @"waitMemberRebatePoints";
+
+NSString *const kUserModelwaitBusinessRebatePoints = @"waitBusinessRebatePoints";
+NSString *const kUserModellastLloginDate = @"lastLloginDate";
+NSString *const kUserModelisBusiness = @"isBusiness";
+NSString *const kUserModelconsumePoints = @"consumePoints";
+NSString *const kUserModelwithdrawalsPoints= @"withdrawalsPoints";
+NSString *const kUserModelLoginStatus = @"status";
+
 
 
 
@@ -35,22 +37,22 @@ NSString *const kUserModelBusinessLicenseImg = @"businessLicenseImg";
 
 @implementation UserModel
 
-@synthesize id = _id;
-@synthesize phone = _phone;
-@synthesize corporateName = _corporateName;
-@synthesize createDate = _createDate;
-@synthesize inviteCode = _inviteCode;
-@synthesize licenseKey = _licenseKey;
-@synthesize examine = _examine;
-@synthesize password = _password;
-@synthesize icon = _icon;
+@synthesize memberId = _memberId;
+@synthesize cellphone = _cellphone;
 @synthesize nickName = _nickName;
-@synthesize plantId = _plantId;
-@synthesize shopIntro = _shopIntro;
-@synthesize shopName = _shopName;
+@synthesize lastLloginDate = _lastLloginDate;
+@synthesize parentInviteCode = _parentInviteCode;
+@synthesize waitBusinessRebatePoints = _waitBusinessRebatePoints;
+@synthesize waitMemberRebatePoints = _waitMemberRebatePoints;
+@synthesize password = _password;
+@synthesize headImg = _headImg;
+@synthesize sex = _sex;
+@synthesize inviteCode = _inviteCode;
+@synthesize registerDate = _registerDate;
+@synthesize isBusiness = _isBusiness;
+@synthesize consumePoints = _consumePoints;
+@synthesize withdrawalsPoints = _withdrawalsPoints;
 @synthesize status = _status;
-@synthesize loginStatus = _loginStatus;
-@synthesize businessLicenseImg = _businessLicenseImg;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
 {
@@ -64,21 +66,23 @@ NSString *const kUserModelBusinessLicenseImg = @"businessLicenseImg";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.id = [self objectOrNilForKey:kUserModelId fromDictionary:dict];
-            self.phone = [self objectOrNilForKey:kUserModelPhone fromDictionary:dict];
-            self.corporateName = [self objectOrNilForKey:kUserModelCorporateName fromDictionary:dict];
-            self.createDate = [self objectOrNilForKey:kUserModelCreateDate fromDictionary:dict];
-            self.inviteCode = [self objectOrNilForKey:kUserModelInviteCode fromDictionary:dict];
-            self.licenseKey = [self objectOrNilForKey:kUserModelLicenseKey fromDictionary:dict];
-            self.examine = [self objectOrNilForKey:kUserModelExamine fromDictionary:dict];
-            self.password = [self objectOrNilForKey:kUserModelPassword fromDictionary:dict];
-            self.icon = [self objectOrNilForKey:kUserModelIcon fromDictionary:dict];
+            self.memberId = [self objectOrNilForKey:kUserModelId fromDictionary:dict];
+            self.cellphone = [self objectOrNilForKey:kUserModelPhone fromDictionary:dict];
             self.nickName = [self objectOrNilForKey:kUserModelNickName fromDictionary:dict];
-            self.plantId = [self objectOrNilForKey:kUserModelPlantId fromDictionary:dict];
-            self.shopIntro = [self objectOrNilForKey:kUserModelShopIntro fromDictionary:dict];
-            self.shopName = [self objectOrNilForKey:kUserModelShopName fromDictionary:dict];
-            self.status = [self objectOrNilForKey:kUserModelStatus fromDictionary:dict];
-            self.businessLicenseImg = [self objectOrNilForKey:kUserModelBusinessLicenseImg fromDictionary:dict];
+            self.registerDate = [self objectOrNilForKey:kUserModelCreateDate fromDictionary:dict];
+            self.inviteCode = [self objectOrNilForKey:kUserModelInviteCode fromDictionary:dict];
+            self.headImg = [self objectOrNilForKey:kUserModelHeader fromDictionary:dict];
+            self.lastLloginDate = [self objectOrNilForKey:kUserModellastLloginDate fromDictionary:dict];
+            self.password = [self objectOrNilForKey:kUserModelPassword fromDictionary:dict];
+            self.sex = [self objectOrNilForKey:kUserModelSex fromDictionary:dict];
+            self.waitMemberRebatePoints = [self objectOrNilForKey:kUserModelwaitMemberRebatePoints fromDictionary:dict];
+            self.waitBusinessRebatePoints = [self objectOrNilForKey:kUserModelwaitBusinessRebatePoints fromDictionary:dict];
+            self.consumePoints = [self objectOrNilForKey:kUserModelconsumePoints fromDictionary:dict];
+            self.withdrawalsPoints = [self objectOrNilForKey:kUserModelwithdrawalsPoints fromDictionary:dict];
+            self.status = [self objectOrNilForKey:kUserModelLoginStatus fromDictionary:dict];
+            self.isBusiness = [self objectOrNilForKey:kUserModelisBusiness fromDictionary:dict];
+            self.parentInviteCode = [self objectOrNilForKey:kUserModelParentInviteCode fromDictionary:dict];
+        
 
     }
     
@@ -88,22 +92,25 @@ NSString *const kUserModelBusinessLicenseImg = @"businessLicenseImg";
 
 - (NSDictionary *)dictionaryRepresentation
 {
+    
+    
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:self.id forKey:kUserModelId];
-    [mutableDict setValue:self.phone forKey:kUserModelPhone];
-    [mutableDict setValue:self.corporateName forKey:kUserModelCorporateName];
-    [mutableDict setValue:self.createDate forKey:kUserModelCreateDate];
-    [mutableDict setValue:self.inviteCode forKey:kUserModelInviteCode];
-    [mutableDict setValue:self.licenseKey forKey:kUserModelLicenseKey];
-    [mutableDict setValue:self.examine forKey:kUserModelExamine];
-    [mutableDict setValue:self.password forKey:kUserModelPassword];
-    [mutableDict setValue:self.icon forKey:kUserModelIcon];
+    [mutableDict setValue:self.memberId forKey:kUserModelId];
+    [mutableDict setValue:self.cellphone forKey:kUserModelPhone];
     [mutableDict setValue:self.nickName forKey:kUserModelNickName];
-    [mutableDict setValue:self.plantId forKey:kUserModelPlantId];
-    [mutableDict setValue:self.shopIntro forKey:kUserModelShopIntro];
-    [mutableDict setValue:self.shopName forKey:kUserModelShopName];
-    [mutableDict setValue:self.status forKey:kUserModelStatus];
-    [mutableDict setValue:self.businessLicenseImg forKey:kUserModelBusinessLicenseImg];
+    [mutableDict setValue:self.registerDate forKey:kUserModelCreateDate];
+    [mutableDict setValue:self.inviteCode forKey:kUserModelInviteCode];
+    [mutableDict setValue:self.headImg forKey:kUserModelHeader];
+    [mutableDict setValue:self.lastLloginDate forKey:kUserModellastLloginDate];
+    [mutableDict setValue:self.password forKey:kUserModelPassword];
+    [mutableDict setValue:self.waitBusinessRebatePoints forKey:kUserModelwaitBusinessRebatePoints];
+     [mutableDict setValue:self.waitMemberRebatePoints forKey:kUserModelwaitMemberRebatePoints];
+    [mutableDict setValue:self.nickName forKey:kUserModelNickName];
+    [mutableDict setValue:self.consumePoints forKey:kUserModelconsumePoints];
+    [mutableDict setValue:self.withdrawalsPoints forKey:kUserModelwithdrawalsPoints];
+    [mutableDict setValue:self.status forKey:kUserModelLoginStatus];
+    [mutableDict setValue:self.isBusiness forKey:kUserModelisBusiness];
+    [mutableDict setValue:self.parentInviteCode forKey:kUserModelParentInviteCode];
     
     
     return [NSDictionary dictionaryWithDictionary:mutableDict];
@@ -128,43 +135,43 @@ NSString *const kUserModelBusinessLicenseImg = @"businessLicenseImg";
 {
     self = [super init];
 
-    self.id = [aDecoder decodeObjectForKey:kUserModelId];
-    self.phone = [aDecoder decodeObjectForKey:kUserModelPhone];
-    self.corporateName = [aDecoder decodeObjectForKey:kUserModelCorporateName];
-    self.createDate = [aDecoder decodeObjectForKey:kUserModelCreateDate];
-    self.inviteCode = [aDecoder decodeObjectForKey:kUserModelInviteCode];
-    self.licenseKey = [aDecoder decodeObjectForKey:kUserModelLicenseKey];
-    self.examine = [aDecoder decodeObjectForKey:kUserModelExamine];
-    self.password = [aDecoder decodeObjectForKey:kUserModelPassword];
-    self.icon = [aDecoder decodeObjectForKey:kUserModelIcon];
+    self.memberId = [aDecoder decodeObjectForKey:kUserModelId];
+    self.cellphone = [aDecoder decodeObjectForKey:kUserModelPhone];
     self.nickName = [aDecoder decodeObjectForKey:kUserModelNickName];
-    self.plantId = [aDecoder decodeObjectForKey:kUserModelPlantId];
-    self.shopIntro = [aDecoder decodeObjectForKey:kUserModelShopIntro];
-    self.shopName = [aDecoder decodeObjectForKey:kUserModelShopName];
-    self.status = [aDecoder decodeObjectForKey:kUserModelStatus];
-    self.loginStatus = [aDecoder decodeObjectForKey:kUserModelLoginStatus];
-    self.businessLicenseImg = [aDecoder decodeObjectForKey:kUserModelBusinessLicenseImg];
+    self.registerDate = [aDecoder decodeObjectForKey:kUserModelCreateDate];
+    self.inviteCode = [aDecoder decodeObjectForKey:kUserModelInviteCode];
+    self.parentInviteCode = [aDecoder decodeObjectForKey:kUserModelParentInviteCode];
+    self.sex = [aDecoder decodeObjectForKey:kUserModelSex];
+    self.password = [aDecoder decodeObjectForKey:kUserModelPassword];
+    self.headImg = [aDecoder decodeObjectForKey:kUserModelHeader];
+    self.lastLloginDate = [aDecoder decodeObjectForKey:kUserModellastLloginDate];
+    self.waitBusinessRebatePoints = [aDecoder decodeObjectForKey:kUserModelwaitBusinessRebatePoints];
+    self.waitMemberRebatePoints = [aDecoder decodeObjectForKey:kUserModelwaitMemberRebatePoints];
+    self.consumePoints = [aDecoder decodeObjectForKey:kUserModelconsumePoints];
+    self.withdrawalsPoints = [aDecoder decodeObjectForKey:kUserModelwithdrawalsPoints];
+    self.status = [aDecoder decodeObjectForKey:kUserModelLoginStatus];
+    self.isBusiness = [aDecoder decodeObjectForKey:kUserModelisBusiness];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:_id forKey:kUserModelId];
-    [aCoder encodeObject:_phone forKey:kUserModelPhone];
-    [aCoder encodeObject:_corporateName forKey:kUserModelCorporateName];
-    [aCoder encodeObject:_createDate forKey:kUserModelCreateDate];
-    [aCoder encodeObject:_inviteCode forKey:kUserModelInviteCode];
-    [aCoder encodeObject:_licenseKey forKey:kUserModelLicenseKey];
-    [aCoder encodeObject:_examine forKey:kUserModelExamine];
-    [aCoder encodeObject:_password forKey:kUserModelPassword];
-    [aCoder encodeObject:_icon forKey:kUserModelIcon];
+    [aCoder encodeObject:_memberId forKey:kUserModelId];
+    [aCoder encodeObject:_cellphone forKey:kUserModelPhone];
     [aCoder encodeObject:_nickName forKey:kUserModelNickName];
-    [aCoder encodeObject:_plantId forKey:kUserModelPlantId];
-    [aCoder encodeObject:_shopIntro forKey:kUserModelShopIntro];
-    [aCoder encodeObject:_shopName forKey:kUserModelShopName];
-    [aCoder encodeObject:_status forKey:kUserModelStatus];
-    [aCoder encodeObject:_loginStatus forKey:kUserModelLoginStatus];
-    [aCoder encodeObject:_businessLicenseImg forKey:kUserModelBusinessLicenseImg];
+    [aCoder encodeObject:_sex forKey:kUserModelSex];
+    [aCoder encodeObject:_inviteCode forKey:kUserModelInviteCode];
+    [aCoder encodeObject:_parentInviteCode forKey:kUserModelParentInviteCode];
+    [aCoder encodeObject:_headImg forKey:kUserModelHeader];
+    [aCoder encodeObject:_password forKey:kUserModelPassword];
+    [aCoder encodeObject:_waitBusinessRebatePoints forKey:kUserModelwaitBusinessRebatePoints];
+    [aCoder encodeObject:_waitMemberRebatePoints forKey:kUserModelwaitMemberRebatePoints];
+    [aCoder encodeObject:_consumePoints forKey:kUserModelconsumePoints];
+    [aCoder encodeObject:_withdrawalsPoints forKey:kUserModelwithdrawalsPoints];
+    [aCoder encodeObject:_lastLloginDate forKey:kUserModellastLloginDate];
+    [aCoder encodeObject:_registerDate forKey:kUserModelCreateDate];
+    [aCoder encodeObject:_status forKey:kUserModelLoginStatus];
+    [aCoder encodeObject:_isBusiness forKey:kUserModelisBusiness];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -173,22 +180,22 @@ NSString *const kUserModelBusinessLicenseImg = @"businessLicenseImg";
     
     if (copy) {
 
-        copy.id = [self.id copyWithZone:zone];
-        copy.phone = [self.phone copyWithZone:zone];
-        copy.corporateName = [self.corporateName copyWithZone:zone];
-        copy.createDate = [self.createDate copyWithZone:zone];
-        copy.inviteCode = [self.inviteCode copyWithZone:zone];
-        copy.licenseKey = [self.licenseKey copyWithZone:zone];
-        copy.examine = [self.examine copyWithZone:zone];
-        copy.password = [self.password copyWithZone:zone];
-        copy.icon = [self.icon copyWithZone:zone];
+        copy.memberId = [self.memberId copyWithZone:zone];
+        copy.cellphone = [self.cellphone copyWithZone:zone];
         copy.nickName = [self.nickName copyWithZone:zone];
-        copy.plantId = [self.plantId copyWithZone:zone];
-        copy.shopIntro = [self.shopIntro copyWithZone:zone];
-        copy.shopName = [self.shopName copyWithZone:zone];
+        copy.registerDate = [self.registerDate copyWithZone:zone];
+        copy.inviteCode = [self.inviteCode copyWithZone:zone];
+        copy.parentInviteCode = [self.parentInviteCode copyWithZone:zone];
+        copy.headImg = [self.headImg copyWithZone:zone];
+        copy.password = [self.password copyWithZone:zone];
+        copy.sex = [self.sex copyWithZone:zone];
+        copy.waitBusinessRebatePoints = [self.waitBusinessRebatePoints copyWithZone:zone];
+        copy.waitMemberRebatePoints = [self.waitMemberRebatePoints copyWithZone:zone];
+        copy.consumePoints = [self.consumePoints copyWithZone:zone];
+        copy.withdrawalsPoints = [self.withdrawalsPoints copyWithZone:zone];
         copy.status = [self.status copyWithZone:zone];
-        copy.loginStatus = [self.loginStatus copyWithZone:zone];
-        copy.businessLicenseImg = [self.businessLicenseImg copyWithZone:zone];
+        copy.lastLloginDate = [self.lastLloginDate copyWithZone:zone];
+        copy.isBusiness = [self.isBusiness copyWithZone:zone];
     }
     
     return copy;

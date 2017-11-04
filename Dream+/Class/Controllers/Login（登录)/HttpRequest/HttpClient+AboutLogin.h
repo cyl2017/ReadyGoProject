@@ -11,4 +11,8 @@
 @interface HttpClient (AboutLogin)
 //获取验证码
 - (void)getVerifyCodeWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle;
+//注册
+- (void)memberRegisterWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle;
+//登录
+- (void)memberLoginWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle;
 @end

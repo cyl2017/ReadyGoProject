@@ -23,4 +23,33 @@
     
     
 }
+
+//注册
+- (void)memberRegisterWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle{
+    BMRequest *request = [BMRequest requestWithPath:@"member/register"];
+    request.requestParams = param;
+    [request addIgonreHookClass:[LoadingHook class]];
+    [self startRequest:request finish:^(BMResponse *response) {
+        completeHandle(response.rawResult,nil);
+    } failureHandler:^(NSError *error) {
+        [BMToast makeText:error.localizedDescription];
+        completeHandle(nil, error);
+    }];
+    
+    
+}
+
+//登录
+- (void)memberLoginWithParam:(NSDictionary *)param CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle{
+    BMRequest *request = [BMRequest requestWithPath:@"member/login"];
+    request.requestParams = param;
+    [request addIgonreHookClass:[LoadingHook class]];
+    [self startRequest:request finish:^(BMResponse *response) {
+        completeHandle(response.rawResult,nil);
+    } failureHandler:^(NSError *error) {
+        [BMToast makeText:error.localizedDescription];
+        completeHandle(nil, error);
+    }];
+    
+}
 @end

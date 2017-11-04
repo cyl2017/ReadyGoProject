@@ -70,7 +70,14 @@
         return;
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@""] = _passWord.text;
+    [[HttpClient sharedInstance]memberRegisterWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        
+         [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+   
     
     
 }
