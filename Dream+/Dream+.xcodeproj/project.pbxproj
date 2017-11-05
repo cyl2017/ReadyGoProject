@@ -21,6 +21,7 @@
 		1849B2551FA8E27F005CBB93 /* ForgetPassWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849B24F1FA8E27F005CBB93 /* ForgetPassWord.m */; };
 		1849B2561FA8E27F005CBB93 /* RegistItemsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1849B2501FA8E27F005CBB93 /* RegistItemsVC.xib */; };
 		1849B25C1FA8E3D5005CBB93 /* RegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849B25B1FA8E3D5005CBB93 /* RegistVC.m */; };
+		1855E1821FAEFCD7002EAB93 /* HttpClient+Commodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1855E1811FAEFCD7002EAB93 /* HttpClient+Commodity.m */; };
 		18E686141F911C1B00A05BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E686131F911C1B00A05BBA /* main.m */; };
 		18E686171F911C1B00A05BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E686161F911C1B00A05BBA /* AppDelegate.m */; };
 		18E686201F911C1B00A05BBA /* Dream_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E6861E1F911C1B00A05BBA /* Dream_.xcdatamodeld */; };
@@ -208,6 +209,8 @@
 		1849B2511FA8E27F005CBB93 /* RegistItemsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistItemsVC.h; sourceTree = "<group>"; };
 		1849B25A1FA8E3D5005CBB93 /* RegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistVC.h; sourceTree = "<group>"; };
 		1849B25B1FA8E3D5005CBB93 /* RegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistVC.m; sourceTree = "<group>"; };
+		1855E1801FAEFCD7002EAB93 /* HttpClient+Commodity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HttpClient+Commodity.h"; sourceTree = "<group>"; };
+		1855E1811FAEFCD7002EAB93 /* HttpClient+Commodity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HttpClient+Commodity.m"; sourceTree = "<group>"; };
 		18E6860F1F911C1B00A05BBA /* Dream+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dream+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E686131F911C1B00A05BBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18E686151F911C1B00A05BBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -864,6 +867,8 @@
 			children = (
 				FA1E24951FA7078C00A218F5 /* HttpClient+HomeRequest.h */,
 				FA1E24961FA7078C00A218F5 /* HttpClient+HomeRequest.m */,
+				1855E1801FAEFCD7002EAB93 /* HttpClient+Commodity.h */,
+				1855E1811FAEFCD7002EAB93 /* HttpClient+Commodity.m */,
 			);
 			path = HttpRequest;
 			sourceTree = "<group>";
@@ -1601,6 +1606,7 @@
 				1849B2551FA8E27F005CBB93 /* ForgetPassWord.m in Sources */,
 				1849B2491FA8C9BB005CBB93 /* LKMainTool.m in Sources */,
 				1849B2481FA8C97D005CBB93 /* LKBaseViewController.m in Sources */,
+				1855E1821FAEFCD7002EAB93 /* HttpClient+Commodity.m in Sources */,
 				FA1E26D21FA70DDF00A218F5 /* LoginVC.m in Sources */,
 				FA1E25ED1FA7078C00A218F5 /* ImageBrowserViewController.m in Sources */,
 				FA1E26261FA7078C00A218F5 /* MerChantHeader.m in Sources */,
