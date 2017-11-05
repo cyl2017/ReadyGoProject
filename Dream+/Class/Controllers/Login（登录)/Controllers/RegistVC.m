@@ -45,6 +45,8 @@
     params[@"cellphone"] = _telphone.text;
     params[@"type"] = @"0";
     [[HttpClient sharedInstance]getVerifyCodeWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+      
+        self.code = data[@"verifyCode"];
         
     }];
     [self countdown:sender];
@@ -61,6 +63,9 @@
     }else if (_vCode.text.length==0){
         [BMToast makeText:@"请输入验证码"];
         return;
+    }else if (_vCode.text!=self.code){
+        [BMToast makeText:@"验证码不正确"];
+        return;
     }else if(_passWord.text.length==0||_surePassword.text.length==0){
         [BMToast makeText:@"密码或确认密码不能为空"];
         return;
@@ -74,10 +79,12 @@
     params[@"cellphone"] = _telphone.text;
     params[@"password"] = _passWord.text;
     params[@"verifyCode"] = _vCode.text;
-    params[@"inviteCode"] = _recomenPhone.text;
-    
+    params[@"inviteCode"] = _recomenPhone.text;//非必填暂时
+    weakSelf(self);
     [[HttpClient sharedInstance]memberRegisterWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
-        
+        if (weakSelf.registBlock) {
+            weakSelf.registBlock(weakSelf.telphone.text);
+        }
          [self.navigationController popViewControllerAnimated:YES];
     }];
     
@@ -89,9 +96,7 @@
 - (IBAction)registItems:(UIButton *)sender {
     
     //注册协议
-    
     RegistItemsVC *regist  = [RegistItemsVC new];
-    
     [self.navigationController pushViewController:regist animated:YES];
     
 }

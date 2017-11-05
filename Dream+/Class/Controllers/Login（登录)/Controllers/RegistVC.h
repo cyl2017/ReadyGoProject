@@ -9,5 +9,5 @@
 #import "LKBaseViewController.h"
 
 @interface RegistVC : LKBaseViewController
-
+@property (nonatomic ,copy) void(^registBlock)(NSString *cellphone);
 @end

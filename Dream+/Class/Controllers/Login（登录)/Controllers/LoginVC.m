@@ -11,6 +11,7 @@
 #import "ToolClass.h"
 #import "CategoryVC.h"
 #import "HttpClient+AboutLogin.h"
+#import "UserModel.h"
 @interface LoginVC ()
 @property (strong, nonatomic) IBOutlet UITextField *accountNum;//账号
 @property (strong, nonatomic) IBOutlet UITextField *passWord;//m密码
@@ -51,9 +52,12 @@
             break;
         case 1:
         {
-                RegistVC *regist  = [RegistVC new];
-         
-                [self.navigationController pushViewController:regist animated:YES];
+            RegistVC *regist  = [RegistVC new];
+            weakSelf(self);
+            regist.registBlock=^(NSString *cellphone){
+              weakSelf.accountNum.text = cellphone;
+             };
+            [self.navigationController pushViewController:regist animated:YES];
             
 
         }
@@ -127,7 +131,9 @@
     params[@"cellphone"] = _accountNum.text;
     params[@"password"] =  _passWord.text;
     [[HttpClient sharedInstance]memberLoginWithParam:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
-        
+        UserModel *model = [UserModel modelObjectWithDictionary:data];
+        [ToolClass saveUserInfo:model];
+        [self loginBackState];
     }];
 
 }
