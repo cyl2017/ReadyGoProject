@@ -117,10 +117,6 @@
 		FA1E26691FA7078D00A218F5 /* TeamCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E25261FA7078C00A218F5 /* TeamCenterViewController.xib */; };
 		FA1E266A1FA7078D00A218F5 /* VipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25281FA7078C00A218F5 /* VipViewController.m */; };
 		FA1E266B1FA7078D00A218F5 /* VipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E25291FA7078C00A218F5 /* VipViewController.xib */; };
-		FA1E266C1FA7078D00A218F5 /* FootprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E252C1FA7078C00A218F5 /* FootprintModel.m */; };
-		FA1E266D1FA7078D00A218F5 /* GoodsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E252E1FA7078C00A218F5 /* GoodsDetailModel.m */; };
-		FA1E266E1FA7078D00A218F5 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25301FA7078C00A218F5 /* MessageModel.m */; };
-		FA1E266F1FA7078D00A218F5 /* MyShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25321FA7078C00A218F5 /* MyShopModel.m */; };
 		FA1E26701FA7078D00A218F5 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25361FA7078C00A218F5 /* AddressTableViewCell.m */; };
 		FA1E26711FA7078D00A218F5 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E25371FA7078C00A218F5 /* AddressTableViewCell.xib */; };
 		FA1E26721FA7078D00A218F5 /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25391FA7078C00A218F5 /* BankCardTableViewCell.m */; };
@@ -145,7 +141,6 @@
 		FA1E26911FA7078D00A218F5 /* PayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E256B1FA7078C00A218F5 /* PayViewController.xib */; };
 		FA1E26921FA7078D00A218F5 /* ShopingCarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E256D1FA7078C00A218F5 /* ShopingCarVC.m */; };
 		FA1E26931FA7078D00A218F5 /* ShopingCarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E256E1FA7078C00A218F5 /* ShopingCarVC.xib */; };
-		FA1E26941FA7078D00A218F5 /* PrefectureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25711FA7078C00A218F5 /* PrefectureModel.m */; };
 		FA1E26951FA7078D00A218F5 /* PayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25751FA7078C00A218F5 /* PayTableViewCell.m */; };
 		FA1E26961FA7078D00A218F5 /* PayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E25761FA7078C00A218F5 /* PayTableViewCell.xib */; };
 		FA1E26971FA7078D00A218F5 /* PrefectureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1E25781FA7078C00A218F5 /* PrefectureCell.m */; };
@@ -390,14 +385,6 @@
 		FA1E25271FA7078C00A218F5 /* VipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipViewController.h; sourceTree = "<group>"; };
 		FA1E25281FA7078C00A218F5 /* VipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipViewController.m; sourceTree = "<group>"; };
 		FA1E25291FA7078C00A218F5 /* VipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VipViewController.xib; sourceTree = "<group>"; };
-		FA1E252B1FA7078C00A218F5 /* FootprintModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootprintModel.h; sourceTree = "<group>"; };
-		FA1E252C1FA7078C00A218F5 /* FootprintModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootprintModel.m; sourceTree = "<group>"; };
-		FA1E252D1FA7078C00A218F5 /* GoodsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailModel.h; sourceTree = "<group>"; };
-		FA1E252E1FA7078C00A218F5 /* GoodsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailModel.m; sourceTree = "<group>"; };
-		FA1E252F1FA7078C00A218F5 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
-		FA1E25301FA7078C00A218F5 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
-		FA1E25311FA7078C00A218F5 /* MyShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShopModel.h; sourceTree = "<group>"; };
-		FA1E25321FA7078C00A218F5 /* MyShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShopModel.m; sourceTree = "<group>"; };
 		FA1E25351FA7078C00A218F5 /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
 		FA1E25361FA7078C00A218F5 /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
 		FA1E25371FA7078C00A218F5 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
@@ -435,8 +422,6 @@
 		FA1E256C1FA7078C00A218F5 /* ShopingCarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopingCarVC.h; sourceTree = "<group>"; };
 		FA1E256D1FA7078C00A218F5 /* ShopingCarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopingCarVC.m; sourceTree = "<group>"; };
 		FA1E256E1FA7078C00A218F5 /* ShopingCarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopingCarVC.xib; sourceTree = "<group>"; };
-		FA1E25701FA7078C00A218F5 /* PrefectureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefectureModel.h; sourceTree = "<group>"; };
-		FA1E25711FA7078C00A218F5 /* PrefectureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefectureModel.m; sourceTree = "<group>"; };
 		FA1E25741FA7078C00A218F5 /* PayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTableViewCell.h; sourceTree = "<group>"; };
 		FA1E25751FA7078C00A218F5 /* PayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayTableViewCell.m; sourceTree = "<group>"; };
 		FA1E25761FA7078C00A218F5 /* PayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayTableViewCell.xib; sourceTree = "<group>"; };
@@ -650,7 +635,6 @@
 				FA1E24361FA7078C00A218F5 /* Category */,
 				FA1E246A1FA7078C00A218F5 /* Controllers */,
 				FA1E25941FA7078C00A218F5 /* Hook */,
-				FA1E25971FA7078C00A218F5 /* HttpRequest */,
 				FA1E259A1FA7078C00A218F5 /* Model */,
 				FA1E25A01FA7078C00A218F5 /* StartImages */,
 				FA1E25AA1FA7078C00A218F5 /* StoryBord */,
@@ -1036,14 +1020,6 @@
 		FA1E252A1FA7078C00A218F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA1E252B1FA7078C00A218F5 /* FootprintModel.h */,
-				FA1E252C1FA7078C00A218F5 /* FootprintModel.m */,
-				FA1E252D1FA7078C00A218F5 /* GoodsDetailModel.h */,
-				FA1E252E1FA7078C00A218F5 /* GoodsDetailModel.m */,
-				FA1E252F1FA7078C00A218F5 /* MessageModel.h */,
-				FA1E25301FA7078C00A218F5 /* MessageModel.m */,
-				FA1E25311FA7078C00A218F5 /* MyShopModel.h */,
-				FA1E25321FA7078C00A218F5 /* MyShopModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1128,8 +1104,6 @@
 		FA1E256F1FA7078C00A218F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA1E25701FA7078C00A218F5 /* PrefectureModel.h */,
-				FA1E25711FA7078C00A218F5 /* PrefectureModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1189,13 +1163,6 @@
 				FA1E25961FA7078C00A218F5 /* LoadingHook.m */,
 			);
 			path = Hook;
-			sourceTree = "<group>";
-		};
-		FA1E25971FA7078C00A218F5 /* HttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HttpRequest;
 			sourceTree = "<group>";
 		};
 		FA1E259A1FA7078C00A218F5 /* Model */ = {
@@ -1646,7 +1613,6 @@
 				FA1E26341FA7078C00A218F5 /* AccountSafeViewController.m in Sources */,
 				FA1E25F81FA7078C00A218F5 /* NSString+Path.m in Sources */,
 				FA1E25F41FA7078C00A218F5 /* NSString+Emoji.m in Sources */,
-				FA1E266C1FA7078D00A218F5 /* FootprintModel.m in Sources */,
 				FA1E26701FA7078D00A218F5 /* AddressTableViewCell.m in Sources */,
 				FA1E26131FA7078C00A218F5 /* ProductDetailVC.m in Sources */,
 				FA1E26821FA7078D00A218F5 /* AddCardFootView.m in Sources */,
@@ -1666,7 +1632,6 @@
 				FA1E269F1FA7078D00A218F5 /* PayMoneyFootView.m in Sources */,
 				FA1E266A1FA7078D00A218F5 /* VipViewController.m in Sources */,
 				FA1E25F01FA7078C00A218F5 /* NSArray+Query.m in Sources */,
-				FA1E266F1FA7078D00A218F5 /* MyShopModel.m in Sources */,
 				FA1E268A1FA7078D00A218F5 /* RMPickerView.m in Sources */,
 				18ED62891FA9B33700113CF0 /* SKTagButton.m in Sources */,
 				FA1E26801FA7078D00A218F5 /* OrderTableViewCell.m in Sources */,
@@ -1694,17 +1659,14 @@
 				FA1E269D1FA7078D00A218F5 /* PayHeadView.m in Sources */,
 				FA1E26121FA7078C00A218F5 /* MerChantVC.m in Sources */,
 				FA1E26431FA7078D00A218F5 /* GoodsTeamViewController.m in Sources */,
-				FA1E26941FA7078D00A218F5 /* PrefectureModel.m in Sources */,
 				FA1E26011FA7078C00A218F5 /* UIView+Extensions.m in Sources */,
 				FA1E26091FA7078C00A218F5 /* ProductCategoryHeader.m in Sources */,
-				FA1E266D1FA7078D00A218F5 /* GoodsDetailModel.m in Sources */,
 				18E6887E1F91269900A05BBA /* LKTabBarController.m in Sources */,
 				FA1E26571FA7078D00A218F5 /* MineVC.m in Sources */,
 				FA1E26971FA7078D00A218F5 /* PrefectureCell.m in Sources */,
 				FA1E25EC1FA7078C00A218F5 /* BMSearchBar.m in Sources */,
 				FA1E26991FA7078D00A218F5 /* ShopCarTableViewCell.m in Sources */,
 				FA1E26591FA7078D00A218F5 /* MYFocusViewController.m in Sources */,
-				FA1E266E1FA7078D00A218F5 /* MessageModel.m in Sources */,
 				FA1E26A11FA7078D00A218F5 /* PayMoneyHeadView.m in Sources */,
 				FA1E25FA1FA7078C00A218F5 /* NSString+Time.m in Sources */,
 				18E686201F911C1B00A05BBA /* Dream_.xcdatamodeld in Sources */,
