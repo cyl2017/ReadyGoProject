@@ -1,7 +1,7 @@
 //
 //  AppDelegate.h
 //  Dream+
-//我是杨开，看得到么？
+//我是liuke，看得到么？
 //  Created by liuke on 2017/10/14.
 //  Copyright © 2017年 Apple. All rights reserved.
 //

@@ -34,6 +34,7 @@
     self.advSource = @[].mutableCopy;
     self.urlArray = @[].mutableCopy;
     [self getHomeAdSource];
+    [self getproductSource];
     [self createCollctionView];
         // Do any additional setup after loading the view.
 }
@@ -46,7 +47,9 @@
 
 
 #pragma mark --- 广告接口
-
+- (void)getproductSource{
+    
+}
 -(void)getHomeAdSource{
     NSMutableDictionary *params =[NSMutableDictionary dictionary];
     params[@"pageNO"] = @"1";
