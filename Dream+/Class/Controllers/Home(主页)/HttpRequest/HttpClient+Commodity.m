@@ -9,10 +9,10 @@
 #import "HttpClient+Commodity.h"
 
 @implementation HttpClient (Commodity)
-//商品查询
+//商品查询 /commodity/findCommodityList
 -(void)commodityFindCommodityListParams:(NSDictionary*)para CompleteleHandek:(void(^)(NSDictionary *data,NSError *error))completeHandle{
     
-    BMRequest *request = [BMRequest requestWithPath:@"banner/findBannerList"];
+    BMRequest *request = [BMRequest requestWithPath:@"commodity/findCommodityList"];
     request.requestParams = para;
     [request addIgonreHookClass:[LoadingHook class]];
     [self startRequest:request finish:^(BMResponse *response) {
