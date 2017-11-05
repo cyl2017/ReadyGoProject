@@ -7,7 +7,7 @@
 //
 
 #import "LKBaseViewController.h"
-
+#import "HttpClient+MineRequest.h"
 @interface MineInfoViewController : LKBaseViewController
 
 @end

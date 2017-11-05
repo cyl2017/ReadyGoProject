@@ -22,19 +22,46 @@
 @end
 
 @implementation OrderStatusViewController{
+    UIButton *oldButton;
     BOOL isRequest;
     NSInteger PageNum; // 页索引
     NSInteger PageSize; // 单面显示条数
 }
 - (IBAction)goHomeClick:(id)sender {
 }
-- (IBAction)statusClick:(id)sender {
+//tag:1~5
+- (IBAction)statusClick:(UIButton *)sender {
+    self.leftSelectedLine.constant = kScreen_Width*0.2*(sender.tag-1);
+    oldButton.selected = NO;
+    sender.selected = YES;
+    oldButton = sender;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.emptyView.hidden = YES;
     [self setTableView];
+    [self selectedStatusButton:self.selectedBtnTag];
+}
+- (void)selectedStatusButton:(NSInteger)tag{
+
+    switch (tag) {
+        case 2:
+            [self statusClick:_buyBtn];
+            break;
+        case 3:
+             [self statusClick:_pushBtn];
+            break;
+        case 4:
+            [self statusClick:_pullBtn];
+            break;
+        case 5:
+            [self statusClick:_finishedBtn];
+            break;
+        default:
+              [self statusClick:_allBtn];
+            break;
+    }
 }
 - (void)setTableView
 {

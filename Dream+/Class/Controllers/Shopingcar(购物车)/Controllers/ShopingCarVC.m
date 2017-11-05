@@ -8,11 +8,14 @@
 #import "PayViewController.h"
 #import "ShopingCarVC.h"
 #import "HomeVC.h"
+#import "ShopCarModel.h"
+#import "ShopCarItem.h"
 #import "MerChantVC.h"
 #import "ProductDetailVC.h"
 #import "ShopCarTableViewCell.h"
 #import "ShopCarTabelHeadView.h"
-@interface ShopingCarVC ()
+#import "HttpClient+ShoppingCartRequest.h"
+@interface ShopingCarVC ()<UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *footView;
 @property (strong, nonatomic) NSArray *dataSource;
@@ -20,7 +23,6 @@
 
 @implementation ShopingCarVC
 {
-    NSInteger editSection;
     UIButton * selectEditBtn;
 }
 
@@ -31,10 +33,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    editSection = -1;
-    
+   
+//    [self getCarList];
     [self.tableView registerNib:[UINib nibWithNibName:@"ShopCarTableViewCell" bundle:nil] forCellReuseIdentifier:@"ShopCarTableViewCell"];
 }
+#pragma mark --- 购物车列表接口
+-(void)getCarList{
+    NSMutableDictionary *params =[NSMutableDictionary dictionary];
+    params[@"memberId"] = @"1";//会员ID
+    
+    [[HttpClient sharedInstance]findShoppingCartListParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        if (data) {
+            _dataSource = [ShopCarModel mj_objectArrayWithKeyValuesArray:data[@"list"]];
+            [_tableView reloadData];
+        }
+        
+    }];
+    
+}
+
 - (IBAction)goBuy:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
     self.tabBarController.tabBar.hidden = NO;
@@ -81,7 +98,6 @@
 -(void)editBtnClick:(UIButton *)editBtn{
     editBtn.selected = !editBtn.selected ;
     selectEditBtn = editBtn;
-    editSection = editBtn.tag-1000;
     [_tableView reloadData];
 }
 - (void)shopTap:(UITapGestureRecognizer *)gesture {
@@ -94,11 +110,8 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     return 60;
-    
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

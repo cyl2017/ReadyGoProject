@@ -8,6 +8,7 @@
 
 #import "MYFocusViewController.h"
 #import "FocusGoodTableViewCell.h"
+#import "HttpClient+MineRequest.h"
 @interface MYFocusViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *btnArr;//关注的商家和商品按钮
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *redLineLeftLayout;

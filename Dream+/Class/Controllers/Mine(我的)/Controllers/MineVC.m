@@ -19,6 +19,7 @@
 #import "QRCodeViewController.h"
 #import "ShopsCenterViewController.h"
 #import "GiveCountViewController.h"
+#import "HttpClient+MineRequest.h"
 @interface MineVC ()
 @property (weak, nonatomic) IBOutlet UIButton *vipBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;//背景图
@@ -61,9 +62,10 @@
     [self.navigationController pushViewController:infoVC animated:YES];
 }
 //tag21-24
-- (IBAction)orderStatusClick:(id)sender {
+- (IBAction)orderStatusClick:(UIButton *)sender {
     
     OrderStatusViewController*infoVC=[[OrderStatusViewController alloc]init];
+    infoVC.selectedBtnTag = sender.tag-19;
     [self.navigationController pushViewController:infoVC animated:YES];
    }
 //tag31-38

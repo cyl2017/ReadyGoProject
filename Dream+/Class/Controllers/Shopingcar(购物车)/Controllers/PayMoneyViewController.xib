@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saw-XY-xTX">
-                    <rect key="frame" x="0.0" y="627" width="188" height="40"/>
+                    <rect key="frame" x="0.0" y="627" width="187.5" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="OHx-ya-42l"/>
                     </constraints>
@@ -34,7 +34,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5B-EH-nXp">
-                    <rect key="frame" x="188" y="627" width="187" height="40"/>
+                    <rect key="frame" x="187.5" y="627" width="187.5" height="40"/>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="去支付">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qdc-TF-h31">
-                    <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="iGZ-Fs-ghA"/>
@@ -63,7 +63,7 @@
                 <constraint firstAttribute="bottom" secondItem="r5B-EH-nXp" secondAttribute="bottom" id="iAr-b6-Y6d"/>
                 <constraint firstAttribute="trailing" secondItem="r5B-EH-nXp" secondAttribute="trailing" id="p3Z-Hv-9MF"/>
                 <constraint firstItem="saw-XY-xTX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="thT-jD-7uz"/>
-                <constraint firstItem="Qdc-TF-h31" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="uUy-yo-0aT"/>
+                <constraint firstItem="Qdc-TF-h31" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uUy-yo-0aT"/>
                 <constraint firstItem="r5B-EH-nXp" firstAttribute="height" secondItem="saw-XY-xTX" secondAttribute="height" id="v10-QN-19W"/>
             </constraints>
             <point key="canvasLocation" x="6" y="389"/>

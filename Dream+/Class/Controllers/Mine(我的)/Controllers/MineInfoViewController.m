@@ -8,6 +8,7 @@
 
 #import "MineInfoViewController.h"
 #import "AddressViewController.h"
+#import "PersonDetailModel.h"
 #import "LoginVC.h"
 @interface MineInfoViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
@@ -17,7 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *nickName;
 @property (strong, nonatomic) IBOutlet UILabel *Sex;
 @property (strong, nonatomic) IBOutlet UIImageView *headerIcon;
-
+@property (weak, nonatomic) IBOutlet UILabel *vipLevel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNub;
 @end
 
 @implementation MineInfoViewController
@@ -26,7 +28,25 @@
     [super viewDidLoad];
     self.headerIcon.layer.masksToBounds = YES;
     self.headerIcon.layer.cornerRadius = self.headerIcon.width/2;
-    // Do any additional setup after loading the view from its nib.
+//    [self getdPersonDetail];
+}
+#pragma mark --- 个人信息接口
+-(void)getdPersonDetail{
+    NSMutableDictionary *params =[NSMutableDictionary dictionary];
+    params[@"memberId"] = @"1";//会员ID
+    
+    [[HttpClient sharedInstance]findPersonDetailParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        if (data) {
+            PersonDetailModel* model = [PersonDetailModel mj_objectWithKeyValues:data];
+            self.nickName.text = model.nickName;
+            self.Sex.text = model.sex;
+            [self.headerIcon sd_setImageWithURL:[NSURL URLWithString:model.headImg] placeholderImage:[UIImage imageNamed:@""]];
+            self.vipLevel.text = model.nickName;;
+            self.phoneNub.text = model.cellphone;;
+        }
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

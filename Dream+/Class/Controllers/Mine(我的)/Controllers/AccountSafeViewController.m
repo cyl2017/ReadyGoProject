@@ -5,7 +5,7 @@
 //  Created by macbook on 2017/10/25.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
-
+#import "ModifyPhoneNumbViewController.h"
 #import "AccountSafeViewController.h"
 #import "ForgetPassWord.h"
 #import "CertificationVC.h"
@@ -83,7 +83,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch (indexPath.row) {
         case 0:
-        {}
+        {
+            ModifyPhoneNumbViewController*cerVC = [ModifyPhoneNumbViewController new];
+            [self.navigationController pushViewController:cerVC animated:YES];
+        }
             break;
         case 1:{
             

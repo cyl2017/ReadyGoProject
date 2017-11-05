@@ -9,5 +9,6 @@
 #import "LKBaseViewController.h"
 
 @interface OrderStatusViewController : LKBaseViewController
-
+//tag:1~5
+@property (assign, nonatomic)  NSInteger selectedBtnTag;
 @end
