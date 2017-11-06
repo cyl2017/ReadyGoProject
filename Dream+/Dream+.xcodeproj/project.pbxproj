@@ -192,6 +192,9 @@
 		FAE8397C1FAFD9D2003848A9 /* PayMoneyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE839251FAFD9D2003848A9 /* PayMoneyHeadView.xib */; };
 		FAE8397D1FAFD9D2003848A9 /* ShopCarTabelHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE839281FAFD9D2003848A9 /* ShopCarTabelHeadView.m */; };
 		FAE8397E1FAFD9D2003848A9 /* ShopCarTabelHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE839291FAFD9D2003848A9 /* ShopCarTabelHeadView.xib */; };
+		FAE839811FAFEE14003848A9 /* CollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE839801FAFEE14003848A9 /* CollectionModel.m */; };
+		FAE839841FAFFD20003848A9 /* HelpInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE839831FAFFD20003848A9 /* HelpInfoModel.m */; };
+		FAE8398A1FB001AA003848A9 /* ToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE839891FB001AA003848A9 /* ToolKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -531,6 +534,12 @@
 		FAE839271FAFD9D2003848A9 /* ShopCarTabelHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarTabelHeadView.h; sourceTree = "<group>"; };
 		FAE839281FAFD9D2003848A9 /* ShopCarTabelHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarTabelHeadView.m; sourceTree = "<group>"; };
 		FAE839291FAFD9D2003848A9 /* ShopCarTabelHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarTabelHeadView.xib; sourceTree = "<group>"; };
+		FAE8397F1FAFEE14003848A9 /* CollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionModel.h; sourceTree = "<group>"; };
+		FAE839801FAFEE14003848A9 /* CollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionModel.m; sourceTree = "<group>"; };
+		FAE839821FAFFD20003848A9 /* HelpInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpInfoModel.h; sourceTree = "<group>"; };
+		FAE839831FAFFD20003848A9 /* HelpInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpInfoModel.m; sourceTree = "<group>"; };
+		FAE839881FB001AA003848A9 /* ToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKit.h; sourceTree = "<group>"; };
+		FAE839891FB001AA003848A9 /* ToolKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -666,6 +675,8 @@
 		FA1E24361FA7078C00A218F5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FAE839881FB001AA003848A9 /* ToolKit.h */,
+				FAE839891FB001AA003848A9 /* ToolKit.m */,
 				18ED62811FA9B33700113CF0 /* SkTag */,
 				FA1E243B1FA7078C00A218F5 /* ImageBrowser */,
 				FA1E24371FA7078C00A218F5 /* BMCover.h */,
@@ -1282,6 +1293,10 @@
 			children = (
 				FAE838DA1FAFD9D2003848A9 /* PersonDetailModel.h */,
 				FAE838DB1FAFD9D2003848A9 /* PersonDetailModel.m */,
+				FAE8397F1FAFEE14003848A9 /* CollectionModel.h */,
+				FAE839801FAFEE14003848A9 /* CollectionModel.m */,
+				FAE839821FAFFD20003848A9 /* HelpInfoModel.h */,
+				FAE839831FAFFD20003848A9 /* HelpInfoModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1466,7 +1481,7 @@
 				TargetAttributes = {
 					18E6860E1F911C1B00A05BBA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3GW6B5GTKG;
+						DevelopmentTeam = 2THS2H94MF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1647,6 +1662,7 @@
 				FA1E26071FA7078C00A218F5 /* ProductCategoryCell.m in Sources */,
 				FAE839491FAFD9D2003848A9 /* OrderStatusViewController.m in Sources */,
 				FAE8393B1FAFD9D2003848A9 /* MineInfoViewController.m in Sources */,
+				FAE839841FAFFD20003848A9 /* HelpInfoModel.m in Sources */,
 				FAE8394B1FAFD9D2003848A9 /* QRCodeViewController.m in Sources */,
 				FA1E26031FA7078C00A218F5 /* CategoryVC.m in Sources */,
 				183F9DC91FAB62590085A5AE /* HttpClient+AboutLogin.m in Sources */,
@@ -1668,6 +1684,7 @@
 				18E686171F911C1B00A05BBA /* AppDelegate.m in Sources */,
 				18E686141F911C1B00A05BBA /* main.m in Sources */,
 				FAE8396A1FAFD9D2003848A9 /* ShopingCarVC.m in Sources */,
+				FAE839811FAFEE14003848A9 /* CollectionModel.m in Sources */,
 				FA1E26051FA7078C00A218F5 /* CategoryModel.m in Sources */,
 				FA1E26221FA7078C00A218F5 /* MerChantProductListCell.m in Sources */,
 				FAE839681FAFD9D2003848A9 /* PayViewController.m in Sources */,
@@ -1683,6 +1700,7 @@
 				FAE839301FAFD9D2003848A9 /* AddressViewController.m in Sources */,
 				FA1E26CE1FA7078D00A218F5 /* ToolClass.m in Sources */,
 				FA1E26BB1FA7078D00A218F5 /* UIView+MJExtension.m in Sources */,
+				FAE8398A1FB001AA003848A9 /* ToolKit.m in Sources */,
 				FAE839521FAFD9D2003848A9 /* HttpClient+MineRequest.m in Sources */,
 				FA1E25EE1FA7078C00A218F5 /* PhotoView.m in Sources */,
 				FAE839711FAFD9D2003848A9 /* PrefectureCell.m in Sources */,
@@ -1848,7 +1866,7 @@
 			baseConfigurationReference = EBA70B0EFBCFFAB4AF184DC7 /* Pods-Dream+.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3GW6B5GTKG;
+				DEVELOPMENT_TEAM = 2THS2H94MF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Class/Thirdpart/ShareSDK",
@@ -1876,7 +1894,7 @@
 			baseConfigurationReference = BEC6860CF8589FEA0CFBD308 /* Pods-Dream+.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3GW6B5GTKG;
+				DEVELOPMENT_TEAM = 2THS2H94MF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Class/Thirdpart/ShareSDK",

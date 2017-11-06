@@ -5,12 +5,13 @@
 //  Created by macbook on 2017/10/25.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
-
+#import "HelpInfoModel.h"
+#import "HttpClient+MineRequest.h"
 #import "HelpCenterViewController.h"
 #import "QRCodeViewController.h"
 @interface HelpCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UITableView * tableView;//list
-@property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) NSMutableArray *dataSource;
 @end
 
 @implementation HelpCenterViewController
@@ -18,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _dataSource = @[@"瑞迪购商城简介",@"注册协议",@"关于充值问题的通知",@"关于购物充值问题",@"充值到账问题补充"];
+     [self getHelpList];
      [self setTableView];
+    
 }
 - (void)setTableView
 {
@@ -32,6 +35,19 @@
     self.tableView = tableView;
     [self.view addSubview:tableView];
     
+    
+}
+#pragma mark --- 查询帮助中心列表接口
+-(void)getHelpList{
+    NSMutableDictionary *params =[NSMutableDictionary dictionary];
+    
+    [[HttpClient sharedInstance]findHelpCenterListParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        if (data) {
+            _dataSource = [HelpInfoModel mj_objectArrayWithKeyValuesArray:data[@"list"]];
+            [_tableView reloadData];
+        }
+        
+    }];
     
 }
 
@@ -121,8 +137,9 @@
     }
     if (_dataSource.count > indexPath.section)
     {
+        HelpInfoModel *model =  _dataSource[indexPath.section];
         cell.textLabel.font = FONT(15);
-        cell.textLabel.text =  _dataSource[indexPath.section];
+        cell.textLabel.text = model.question;
         
     }
     cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
@@ -131,7 +148,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    HelpInfoModel *model =  _dataSource[indexPath.section];
     QRCodeViewController* infoVC=[[QRCodeViewController alloc]init];
+    infoVC.url = [NSURL URLWithString:model.answer];
     [self.navigationController pushViewController:infoVC animated:YES];
     
 }

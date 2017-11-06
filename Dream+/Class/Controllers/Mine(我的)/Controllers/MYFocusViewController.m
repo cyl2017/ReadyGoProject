@@ -5,7 +5,9 @@
 //  Created by macbook on 2017/10/25.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
-
+#import "ProductDetailVC.h"
+#import "MerChantVC.h"
+#import "CollectionModel.h"
 #import "MYFocusViewController.h"
 #import "FocusGoodTableViewCell.h"
 #import "HttpClient+MineRequest.h"
@@ -60,8 +62,7 @@
     
 }
 - (void)loadNewData
-{
-    if (isRequest) {
+{    if (isRequest) {
         return;
     }
     isRequest = YES;
@@ -79,10 +80,20 @@
     PageNum++;
     [self requestData];
 }
+#pragma mark --- 收藏列表接口
 - (void)requestData
 {
-    
-    NSMutableDictionary *params = @{}.mutableCopy;
+        NSMutableDictionary *params =[NSMutableDictionary dictionary];
+        params[@"memberId"] = [ToolClass userInfo ].memberId;//会员ID
+        params[@"type"] = @(_selectedBtn.tag);//类型(0商品，1商户)||tag：0商品、1商家
+        [[HttpClient sharedInstance]findCollectionListParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+            if (data) {
+                _dataSource = [CollectionModel mj_objectArrayWithKeyValuesArray:data[@"list"]];
+                [_tableView reloadData];
+            }
+            
+        }];
+
     
 }
 #pragma mark - UITableView delegate
@@ -107,16 +118,53 @@
     FocusGoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FocusGoodTableViewCell"];
     if (_dataSource.count > indexPath.row)
     {
-        
+        CollectionModel *model =_dataSource[indexPath.row] ;
+        cell.focusTitle.text = model.commodityName;
+        cell.price.text = model.commodityPrice;
+        if (_selectedBtn.tag==1) {//|tag：0商品、1商家
+            [cell.goodImage sd_setImageWithURL:[NSURL URLWithString:model.merchantImageUrl] placeholderImage:[UIImage imageNamed:@""]] ;
+        }else{
+            [cell.goodImage sd_setImageWithURL:[NSURL URLWithString:model.commodityImageUrl] placeholderImage:[UIImage imageNamed:@""]] ;
+        }
+        cell.cancelButton.tag = indexPath.row;
+        [cell.cancelButton addTarget:self action:@selector(cancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
     }
-    
-    
+
     return cell;
+}
+-(void)cancelButtonClicked:(UIButton *)sender{
+    CollectionModel *model =_dataSource[sender.tag] ;
+    NSMutableDictionary *params =[NSMutableDictionary dictionary];
+    params[@"memberId"] = [ToolClass userInfo ].memberId;//会员ID
+    params[@"collectionId"] = model.collectionId;//
+    [[HttpClient sharedInstance]deleteCollectionParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
+        if (!error) {
+         [BMToast makeText:@"删除成功"];
+            [_tableView reloadData];
+        }
+        
+    }];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+     CollectionModel *model =_dataSource[indexPath.row] ;
+    if (_selectedBtn.tag==0) {//|tag：0商品、1商家
+        ProductDetailVC *pdvc = [ProductDetailVC new];
+        // commodityId商品ID
+        
+        pdvc.title = @"商品详情";
+        [self.navigationController pushViewController:pdvc animated:YES];
+
+    }else if(_selectedBtn.tag==1){
+        MerChantVC *pdvc = [MerChantVC new];
+        //merchantId商户ID
     
+        [self.navigationController pushViewController:pdvc animated:YES];
+    }
+
+
     
 }
 

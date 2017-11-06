@@ -34,13 +34,13 @@
     [super viewDidLoad];
  
    
-//    [self getCarList];
+    [self getCarList];
     [self.tableView registerNib:[UINib nibWithNibName:@"ShopCarTableViewCell" bundle:nil] forCellReuseIdentifier:@"ShopCarTableViewCell"];
 }
 #pragma mark --- 购物车列表接口
 -(void)getCarList{
     NSMutableDictionary *params =[NSMutableDictionary dictionary];
-    params[@"memberId"] = @"1";//会员ID
+    params[@"memberId"] = [ToolClass userInfo ].memberId;//会员ID
     
     [[HttpClient sharedInstance]findShoppingCartListParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
         if (data) {
@@ -116,7 +116,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopCarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShopCarTableViewCell"];
-    
+ 
     if (selectEditBtn.tag -1000==indexPath.section&&selectEditBtn.selected)
     {
         cell.calculatorView.hidden = NO;

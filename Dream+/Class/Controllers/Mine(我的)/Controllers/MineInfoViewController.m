@@ -28,12 +28,12 @@
     [super viewDidLoad];
     self.headerIcon.layer.masksToBounds = YES;
     self.headerIcon.layer.cornerRadius = self.headerIcon.width/2;
-//    [self getdPersonDetail];
+    [self getdPersonDetail];
 }
 #pragma mark --- 个人信息接口
 -(void)getdPersonDetail{
     NSMutableDictionary *params =[NSMutableDictionary dictionary];
-    params[@"memberId"] = @"1";//会员ID
+    params[@"memberId"] = [ToolClass userInfo ].memberId;//会员ID
     
     [[HttpClient sharedInstance]findPersonDetailParams:params CompleteleHandek:^(NSDictionary *data, NSError *error) {
         if (data) {
